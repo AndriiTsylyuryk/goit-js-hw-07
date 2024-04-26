@@ -30,7 +30,7 @@ images.forEach(pic => {
   const picture = document.createElement("img"); 
   picture.src = pic.url;
   picture.alt = pic.alt;
-  picture.width = 320;
+  picture.width = 360;
   const listEl = document.createElement("li");
   listEl.append(picture);
   const gallery1 = document.querySelector(".gallery")
