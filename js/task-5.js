@@ -10,7 +10,11 @@ console.log(button);
 button.addEventListener("click", handleClick);
 
 const body = document.querySelector("body");
+const span = document.querySelector("color");
 
 function handleClick(event) {
-  body.style.backgroundColor = getRandomHexColor();
+  const span = document.querySelector(".color");
+  const color = getRandomHexColor();
+  body.style.backgroundColor = color;
+  span.textContent = color;
 }

@@ -25,6 +25,8 @@ const images = [
   },
 ];
 
+const arr = [];
+
 images.forEach((pic) => {
   const picture = document.createElement("img");
   picture.src = pic.url;
@@ -32,6 +34,11 @@ images.forEach((pic) => {
   picture.width = 360;
   const listEl = document.createElement("li");
   listEl.append(picture);
-  const gallery1 = document.querySelector(".gallery");
-  gallery1.appendChild(listEl);
+  arr.push(listEl);
+});
+
+const gallery = document.querySelector(".gallery");
+
+arr.forEach((item) => {
+  gallery.appendChild(item);
 });

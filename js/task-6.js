@@ -20,18 +20,23 @@ function handleClick(event) {
 }
 
 function createBoxes(amount) {
+  boxes.innerHTML = "";
+
   let size = 30;
+  const fragment = document.createDocumentFragment();
+
   for (let i = 0; i < amount; i++) {
     const newBox = document.createElement("div");
     newBox.style.width = size + "px";
     newBox.style.height = size + "px";
     newBox.style.backgroundColor = getRandomHexColor();
-    boxes.appendChild(newBox);
+
+    fragment.appendChild(newBox);
     size += 10;
   }
-}
 
-console.log(boxes);
+  boxes.appendChild(fragment);
+}
 
 function destroyBoxes() {
   boxes.innerHTML = "";
