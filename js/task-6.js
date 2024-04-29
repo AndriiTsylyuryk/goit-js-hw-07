@@ -23,20 +23,22 @@ function createBoxes(amount) {
   boxes.innerHTML = "";
 
   let size = 30;
-  const fragment = document.createDocumentFragment();
+  let boxesHTML = '';
 
   for (let i = 0; i < amount; i++) {
     const newBox = document.createElement("div");
     newBox.style.width = size + "px";
     newBox.style.height = size + "px";
     newBox.style.backgroundColor = getRandomHexColor();
-
-    fragment.appendChild(newBox);
     size += 10;
+    boxesHTML += newBox.outerHTML;
   }
-
-  boxes.appendChild(fragment);
+  boxes.innerHTML = boxesHTML;
 }
+
+
+console.log(createBoxes(2));
+
 
 function destroyBoxes() {
   boxes.innerHTML = "";

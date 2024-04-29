@@ -25,20 +25,15 @@ const images = [
   },
 ];
 
-const arr = [];
+const imagesArr = images.map(item => `
+<li>
+<img src = "${item.url}" alt ="${item.alt}" width = "320">
+</li> `
+).join("");
 
-images.forEach((pic) => {
-  const picture = document.createElement("img");
-  picture.src = pic.url;
-  picture.alt = pic.alt;
-  picture.width = 360;
-  const listEl = document.createElement("li");
-  listEl.append(picture);
-  arr.push(listEl);
-});
 
 const gallery = document.querySelector(".gallery");
+gallery.innerHTML = imagesArr;
 
-arr.forEach((item) => {
-  gallery.appendChild(item);
-});
+
+
